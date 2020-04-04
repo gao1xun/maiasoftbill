@@ -1,0 +1,12 @@
+.header__logo {
+    margin: 5px 10px 0 0;
+    padding: 0;
+    line-height: 1px;
+    float: left;
+    width: 140px;
+}
+
+.header__logo img {
+    width: 140;
+    height: 20;
+}

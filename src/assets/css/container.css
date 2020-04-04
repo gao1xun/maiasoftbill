@@ -1,0 +1,9 @@
+.container {
+    width: 1180;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-background {
+    background-color: #f5f7f9;
+}
