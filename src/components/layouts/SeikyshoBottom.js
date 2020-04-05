@@ -31,38 +31,44 @@ const useStyles = makeStyles((theme) => ({
 export default function SekyshoBottom () {
     const classes = useStyles();
     return(
-        <Grid container spacing={1} >
-            <Grid item xs={7} className={classes.smalltextField}>
-                <Typography variant="body2" gutterBottom>小計</Typography>
-                <TextField defaultValue="0" 
-                    InputProps={{
-                        readOnly: true,
-                        endAdornment: <InputAdornment position="end">円</InputAdornment>,
-                    }}
-                />
-                <Typography variant="body2" gutterBottom>消費税</Typography>
-                <HelpOutlinedIcon color="action" fontSize="small" />
-                <TextField defaultValue="0"
-                    InputProps={{
-                        readOnly: true,
-                        endAdornment: <InputAdornment position="end">円</InputAdornment>,
-                    }}
-                />
-            </Grid>
-            <Divider orientation="vertical" flexItem />
-            <Grid item xs={4} className={classes.normaltextField}>
-                <Typography variant="h4" gutterBottom>合計</Typography>
-                <TextField defaultValue="0" 
-                    InputProps={{
-                        readOnly: true,
-                        endAdornment: <InputAdornment position="end">円</InputAdornment>,
-                    }}
-                />
-                <Button variant="contained" color="primary" disableElevation>
-                    保存する
-                </Button>
+        <React.Fragment>
             
+            <Grid container spacing={1} style={{position:'fixed', bottom:0}}>
+               <Grid item xs={12} flexItem>
+                    <Divider />
+               </Grid>
+                <Grid item xs={7} className={classes.smalltextField}>
+                    <Typography variant="body2" gutterBottom>小計</Typography>
+                    <TextField defaultValue="0" 
+                        InputProps={{
+                            readOnly: true,
+                            endAdornment: <InputAdornment position="end">円</InputAdornment>,
+                        }}
+                    />
+                    <Typography variant="body2" gutterBottom>消費税</Typography>
+                    <HelpOutlinedIcon color="action" fontSize="small" />
+                    <TextField defaultValue="0"
+                        InputProps={{
+                            readOnly: true,
+                            endAdornment: <InputAdornment position="end">円</InputAdornment>,
+                        }}
+                    />
+                </Grid>
+                <Divider orientation="vertical" flexItem />
+                <Grid item xs={4} className={classes.normaltextField}>
+                    <Typography variant="h4" gutterBottom>合計</Typography>
+                    <TextField defaultValue="0"  
+                        InputProps={{
+                            readOnly: true,
+                            endAdornment: <InputAdornment position="end">円</InputAdornment>,
+                        }}
+                    />
+                    <Button variant="contained" color="primary" disableElevation>
+                        保存する
+                    </Button>
+                
+                </Grid>
             </Grid>
-        </Grid>
+        </React.Fragment>
     );
 }

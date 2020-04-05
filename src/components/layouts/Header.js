@@ -3,7 +3,7 @@ import {AppBar, Toolbar, Typography} from '@material-ui/core';
 
 export default ()=>
     <AppBar position="static">
-        <Toolbar style={{backgroundColor:'#162533'}}>
+        <Toolbar color="parimary">
             <Typography>
                 請求書
             </Typography>

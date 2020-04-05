@@ -4,10 +4,23 @@ import './assets/css/index.css';
 import SeikyushoEdit from './components/SeikyushoEdit';
 import * as serviceWorker from './serviceWorker';
 
+import {createMuiTheme,MuiThemeProvider} from '@material-ui/core';
+import {cyan, yellow} from '@material-ui/core/colors';
+
+const theme = createMuiTheme ({
+    palette: {
+      parimary: cyan,
+      secondary: {
+          main:yellow[100]
+      },
+      type:'dark'
+    }
+})
+
 ReactDOM.render(
-  <React.StrictMode>
-    <SeikyushoEdit />
-  </React.StrictMode>,
+  <MuiThemeProvider>
+    <SeikyushoEdit theme={theme}/>
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 
