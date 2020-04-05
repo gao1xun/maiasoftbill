@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
-import SeikyushoEdit from './SeikyushoEdit';
+import SeikyushoEdit from './components/SeikyushoEdit';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
