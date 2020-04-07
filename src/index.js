@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
 import SeikyushoEdit from './components/SeikyushoEdit';
+import HinmokuEdit from './components/HinmokuEdit';
 import * as serviceWorker from './serviceWorker';
 
 import {createMuiTheme,MuiThemeProvider} from '@material-ui/core';
@@ -19,7 +20,7 @@ const theme = createMuiTheme ({
 
 ReactDOM.render(
   <MuiThemeProvider>
-    <SeikyushoEdit theme={theme}/>
+    <HinmokuEdit theme={theme}/>
   </MuiThemeProvider>,
   document.getElementById('root')
 );
