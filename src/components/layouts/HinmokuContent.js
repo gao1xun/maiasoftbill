@@ -26,15 +26,18 @@ const tipTitle = {
 export default ()=> {
     const [value, setValue] = React.useState('USE_SENDER');
 
+    const [value1, setValue1] = React.useState('a');
+
     const taxTypeHandleChange = (event) => {
       setValue(event.target.value);
     };
 
-    const [checked, setChecked] = React.useState(false);
+    const taxTypeHandleChange1 = (event) => {
+        setValue1(event.target.value);
+      };
 
-    const withholdingTaxhandleChange = (event) => {
-      setChecked(event.target.checked);
-    };
+    
+
 
 
 
@@ -44,37 +47,63 @@ export default ()=> {
             <div>
                 <div style={{float: 'right'}}>
                     <Typography variant="body1" >
-                        <Link href="#" onClick={linkFunc} style={styles.linkStyle} underline="none" >品目一覧へ戻る</Link>
+                        <Link href="#" onClick={linkFunc} style={styles.linkStyle} underline="none" >社員一覧へ戻る</Link>
                     </Typography>
                 </div>
-                <Typography variant="h4">品目の新規登録</Typography>
+                <Typography variant="h4">社員の新規登録</Typography>
                 
             </div>
     
             <Grid container spacing={2} style={{marginTop: 40}}>
                 <Grid item xs={12}>
                     <InputLabel htmlFor="dealing_item_name">
-                        <Typography variant="h6" color="textPrimary">品番・品名 <MustMart /></Typography>
+                        <Typography variant="h6" color="textPrimary">社員名 <MustMart /></Typography>
                     </InputLabel>
                     <TextField id="dealing_item_name" variant="outlined" size="small"/>
     
                 </Grid>
                 <Grid item xs={12}>
                     <InputLabel htmlFor="dealing_item_unit_name">
-                        <Typography variant="h6" color="textPrimary">単位 </Typography>
+                        <Typography variant="h6" color="textPrimary">社員基準額（円) </Typography>
                     </InputLabel>
-                    <TextField id="dealing_item_unit_name" variant="outlined" size="small"/>
+                    <TextField id="dealing_item_unit_name" variant="outlined" size="small"
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">円</InputAdornment>,
+                          }}/>
                 
                 </Grid>
                 <Grid item xs={12}>
                     <InputLabel htmlFor="dealing_item_unit_price">
-                        
+                    <Typography variant="h6" color="textPrimary">標準作業時間(H)下限</Typography>
+                    
                     </InputLabel>
-                    <TextField id="dealing_item_unit_price" variant="outlined" size="small" 
+                    <TextField id="dealing_item_unit_price" variant="outlined" size="small"  
                         InputProps={{
-                            endAdornment: <InputAdornment position="end">円</InputAdornment>,
-                          }}
-                    />
+                            endAdornment: <InputAdornment position="end">H</InputAdornment>,
+                        }}/>
+                    
+                </Grid>
+                <Grid item xs={12}>
+                    <InputLabel htmlFor="dealing_item_unit_price1">
+                    <Typography variant="h6" color="textPrimary">標準作業時間(H)上限</Typography>
+                    
+                    </InputLabel>
+                    <TextField id="dealing_item_unit_price1" variant="outlined" size="small" 
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">H</InputAdornment>,
+                        }} />
+                    
+                </Grid>
+
+                <Grid item xs={12}>
+                    <InputLabel htmlFor="dealing_item_unit_price2">
+                    <Typography variant="h6" color="textPrimary">過時間単価(円／Ｈ）</Typography>
+                    
+                    </InputLabel>
+                    <TextField id="dealing_item_unit_price2" variant="outlined" size="small" 
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">円／Ｈ</InputAdornment>,
+                        }} />
                     
                 </Grid>
     
@@ -93,12 +122,16 @@ export default ()=> {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Typography variant="h6" color="textPrimary">源泉税 </Typography>
-                    <FormControlLabel
-                        control={<Checkbox checked={checked} onChange={withholdingTaxhandleChange} name="excluding_withholding_tax" />}
-                        label="対象外"
-                    />
+                    <FormControl component="fieldset">
+                    <FormLabel component="legend"><Typography variant="h6" color="textPrimary">部署タイプ </Typography></FormLabel>
+                    <RadioGroup aria-label="dealing_item_tax_type" name="dealing_item_tax_type" value={value1} onChange={taxTypeHandleChange1}>
+                        <FormControlLabel value="a" control={<Radio />} label="事業" />
+                        <FormControlLabel value="b" control={<Radio />} label="派遣" />
+                    </RadioGroup>
+                    </FormControl>
                 </Grid>
+
+                
                 <Grid item xs={12}>
                     <Button variant="contained" color="primary" disableElevation style={styles.saveButton}> <Typography variant="h6" >保存する </Typography></Button>
                 </Grid>

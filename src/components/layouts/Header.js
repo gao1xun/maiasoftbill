@@ -54,7 +54,12 @@ export default () => {
                 </ButtonBase>
                 <ButtonBase className={classes.button}>
                     <Typography>
-                        品目
+                        社員
+                    </Typography>
+                </ButtonBase>
+                <ButtonBase className={classes.button}>
+                    <Typography>
+                        自社情報
                     </Typography>
                 </ButtonBase>
                 <ButtonBase className={classes.infoButton}>
