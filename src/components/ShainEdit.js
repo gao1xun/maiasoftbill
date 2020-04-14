@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import {Container, CssBaseline} from '@material-ui/core';
-import {Header, Footer, HinmokuContent} from './layouts';
+import {Header, Footer, ShainContent} from './layouts';
 
 export default class SeikyushoEdit extends Component {
     constructor (props) {
@@ -12,10 +12,10 @@ export default class SeikyushoEdit extends Component {
         return (
           <Fragment>
             <CssBaseline />
-            <Container maxwidth="xs" style={{ backgroundColor: '#cfe8fc', height: '100vh' }}>
+            <Container maxwidth="xs" style={{ backgroundColor: '#cfe8fc', paddingTop: 15 }}>
               <Header />
-              <HinmokuContent />
-               <Footer />
+              <ShainContent />
+              <Footer />
             </Container>
           </Fragment>
             

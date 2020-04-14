@@ -7,6 +7,7 @@ import {AppBar, Toolbar, Typography, Button, ButtonBase} from '@material-ui/core
 const usestyles = makeStyles((theme) => ({
     appbar: {
         marginBottom: 15,
+        
     },
     toolbar : {
         backgroundColor : '#3b3f47',
